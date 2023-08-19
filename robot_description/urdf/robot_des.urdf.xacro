@@ -40,4 +40,88 @@
         <limit lower="-${PI/2}" upper="${PI/2}" effort="${effort}" velocity="${velocity}"/>
     </joint>
 
+    <link name="forward_drive_arm">
+        <visual>
+            <origin rpy="0 -${PI/2} ${PI/2}" xyz="0.19 0.06 -0.08"/>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/forward_drive_arm.STL" scale="0.01 0.01 0.01"/> 
+            </geometry>
+        </visual>
+    </link>
+    <joint name="joint_2" type="revolute">
+        <parent link="base_plate"/>
+        <child link="forward_drive_arm"/>
+        <axis xyz="1 0 0"/>
+        <origin rpy="0 0 0" xyz="-0.02 0 0.35"/>
+        <limit lower="-${PI/2}" upper="${PI/2}" effort="${effort}" velocity="${velocity}"/>
+    </joint>
+
+    <link name="horizontal_arm">
+        <visual>
+            <origin rpy="${PI/2} 0 ${PI/2}" xyz="-0.03 -0.4 -0.06"/>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/horizontal_arm.STL" scale="0.01 0.01 0.01"/> 
+            </geometry>
+        </visual>
+    </link>
+    <joint name="joint_3" type="revolute">
+        <parent link="forward_drive_arm"/>
+        <child link="horizontal_arm"/>
+        <axis xyz="1 0 0"/>
+        <origin rpy="0 0 0" xyz="0 0 0.8"/>
+        <limit lower="-${PI/2}" upper="${PI/2}" effort="${effort}" velocity="${velocity}"/>
+    </joint>
+
+    <link name="claw_support">
+        <visual>
+            <origin rpy="0 0 ${PI/2}" xyz="0 -0.05 -0.15"/>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/claw_support.STL" scale="0.01 0.01 0.01"/> 
+            </geometry>
+        </visual>
+    </link>
+    <joint name="horizontal_arm_to_claw_support" type="fixed">
+        <parent link="horizontal_arm"/>
+        <child link="claw_support"/>
+        <axis xyz="1 0 0"/>
+        <origin rpy="0 0 0" xyz="0 0.82 0"/>
+        <limit lower="-${PI/2}" upper="${PI/2}" effort="${effort}" velocity="${velocity}"/>
+    </joint>
+  
+  
+    <link name="gripper_right">
+        <visual>
+            <origin rpy="0 0 -${PI/2}" xyz="-0.1 0.5 -0.1"/>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/right_finger.STL" scale="0.01 0.01 0.01"/> 
+            </geometry>
+        </visual>
+    </link>
+    <joint name="joint_4" type="revolute">
+        <parent link="claw_support"/>
+        <child link="gripper_right"/>
+        <axis xyz="0 0 1"/>
+        <origin rpy="0 0 0" xyz="-0.04 0.13 -0.1"/>
+        <limit lower="-${PI/2}" upper="0.0" effort="${effort}" velocity="${velocity}"/>
+
+    </joint>
+
+
+    <link name="gripper_left">
+        <visual>
+            <origin rpy="0 0 -${PI/2}" xyz="-0.04 0.5 -0.1"/>
+            <geometry>
+                <mesh filename="package://robot_description/meshes/left_finger.STL" scale="0.01 0.01 0.01"/> 
+            </geometry>
+        </visual>
+    </link>
+    <joint name="joint_5" type="revolute">
+        <parent link="claw_support"/>
+        <child link="gripper_left"/>
+        <axis xyz="0 0 1"/>
+        <origin rpy="0 0 0" xyz="-0.22 0.13 -0.1"/>
+        <limit lower="0.0" upper="${PI/2}" effort="${effort}" velocity="${velocity}"/>
+        <mimic joint="joint_4" multiplier="-1"/>
+    </joint>
+
 </robot>
