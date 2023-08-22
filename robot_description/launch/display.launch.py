@@ -24,7 +24,7 @@ def generate_launch_description():
 
     joint_state_pub= Node(
         package="joint_state_publisher_gui",
-        executable="joint_state_publisher_gui",
+        executable="joint_state_publisher_gui"
     )
     
     rviz2_launch= Node(
