@@ -1,10 +1,6 @@
 <?xml version="1.0"?>
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="arm_robot">
-
-    <xacro:include filename="$(find robot_description)/urdf/arm_robot_gazebo.xacro" />
-    <xacro:include filename="$(find robot_description)/urdf/arm_robot_control.xacro" />
-
     <xacro:property name="PI" value="3.14159"/>
     <xacro:property name="effort" value="30.0"/>
     <xacro:property name="velocity" value="10.0"/>
@@ -16,17 +12,6 @@
                      izz="1.0"/>
         </inertial>
     </xacro:macro>
-
-    <xacro:macro name="default_transmission" params="num">
-        <transmission name="transmission_${num}">
-            <plugin>transmission_interface/SimpleTransmission</plugin>
-            <actuator name="motor_${num}" role="actuator1"/>
-            <joint name="joint_${num}" role="joint1">
-                <mechanical_reduction>1.0</mechanical_reduction>
-            </joint>
-        </transmission>
-    </xacro:macro>
-
     <link name="world"/>
 
     <link name="base_link">
@@ -193,10 +178,5 @@
         <limit lower="0.0" upper="${PI/2}" effort="${effort}" velocity="${velocity}"/>
         <mimic joint="joint_4" multiplier="-1"/>
     </joint>
-
-    <xacro:default_transmission num="1"/>
-    <xacro:default_transmission num="2"/>
-    <xacro:default_transmission num="3"/>
-    <xacro:default_transmission num="4"/>
 
 </robot>
