@@ -2,8 +2,8 @@
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="arm_robot">
 
-    <xacro:include filename="$(find robot_description)/urdf/arm_robot_gazebo.xacro" />
-    <xacro:include filename="$(find robot_description)/urdf/arm_robot_control.xacro" />
+    <xacro:include filename="arm_robot_gazebo.xacro" />
+    <xacro:include filename="arm_robot_control.xacro" />
 
     <xacro:property name="PI" value="3.14159"/>
     <xacro:property name="effort" value="30.0"/>
@@ -67,6 +67,7 @@
             </geometry>
         </collision>
     </link>
+
     <joint name="joint_1" type="revolute">
         <parent link="base_link"/>
         <child link="base_plate"/>
@@ -90,6 +91,7 @@
             </geometry>
         </collision>
     </link>
+    
     <joint name="joint_2" type="revolute">
         <parent link="base_plate"/>
         <child link="forward_drive_arm"/>

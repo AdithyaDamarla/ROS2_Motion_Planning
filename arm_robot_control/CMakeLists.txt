@@ -12,8 +12,12 @@ find_package(ament_cmake REQUIRED)
 # find_package(<dependency> REQUIRED)
 
 install(
-  DIRECTORY config
+  DIRECTORY config launch
   DESTINATION share/$(PROJECT_NAME)
+)
+install (
+  DIRECTORY config launch
+  DESTINATION share/arm_robot_control
 )
 
 if(BUILD_TESTING)

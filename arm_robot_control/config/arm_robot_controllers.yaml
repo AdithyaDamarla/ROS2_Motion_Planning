@@ -23,6 +23,7 @@ arm_controller:
     
     command_interfaces:
       -position
+      
     state_interfaces:
       -position
     
