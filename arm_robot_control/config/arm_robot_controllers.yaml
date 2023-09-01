@@ -17,15 +17,15 @@ controller_manager:
 arm_controller:
   ros__parameters:
     joints:
-      -joint_1
-      -joint_2
-      -joint_3
+      - joint_1
+      - joint_2
+      - joint_3
     
     command_interfaces:
-      -position
+      - position
       
     state_interfaces:
-      -position
+      - position
     
     open_loop_control: true
     allow_integration_in_goal_trajectories: true
@@ -33,13 +33,13 @@ arm_controller:
 gripper_controller:
   ros__parameters:
     joints:
-      -joint_4
+      - joint_4
     
     interface_name: position
     # command_interfaces:
-    #   -position
+    #   - position
     # state_interfaces:
-    #   -position
+    #   - position
 
     # open_loop_control: true
     # allow_integration_in_goal_trajectories: true
