@@ -12,7 +12,7 @@
         <joint name="joint_1">
             <command_interface name="position">
                 <params name="min">-${PI/2}</params>
-                <params name="mav">${PI/2}</params>
+                <params name="max">${PI/2}</params>
             </command_interface>
             <state_interface name="position"/>
         
@@ -21,7 +21,7 @@
         <joint name="joint_2">
             <command_interface name="position">
                 <params name="min">-${PI/2}</params>
-                <params name="mav">${PI/2}</params>
+                <params name="max">${PI/2}</params>
             </command_interface>
             <state_interface name="position"/>
         
@@ -30,7 +30,7 @@
         <joint name="joint_3">
             <command_interface name="position">
                 <params name="min">-${PI/2}</params>
-                <params name="mav">${PI/2}</params>
+                <params name="max">${PI/2}</params>
             </command_interface>
             <state_interface name="position"/>
         
@@ -39,7 +39,7 @@
         <joint name="joint_4">
             <command_interface name="position">
                 <params name="min">-${PI/2}</params>
-                <params name="mav">0.0</params>
+                <params name="max">0.0</params>
             </command_interface>
             <state_interface name="position"/>
         
@@ -49,7 +49,7 @@
             <param name="multiplier">-1</param>
             <command_interface name="position">
                 <params name="min">0.0</params>
-                <params name="mav">${PI/2}</params>
+                <params name="max">${PI/2}</params>
             </command_interface>
             <state_interface name="position"/>
         

@@ -20,21 +20,21 @@ def generate_launch_description():
     joint_state_broadcaster_node = Node(
         package='controller_manager',
         executable='spawner',
-        arguments=['joint_state_broadcaster', "--controller-manager","/controller_manager"]
+        arguments=['joint_state_broadcaster']
     )
     
     arm_controller_spawner = Node(
         package='controller_manager',
         executable='spawner',
-        arguments=['arm_controller', "--controller-manager","/controller_manager"]
+        arguments=['arm_controller']
     )
     
     gripper_controller_spawner = Node(
         package='controller_manager',
         executable='spawner',
-        arguments=['gripper_controller', "--controller-manager","/controller_manager"]
+        arguments=['gripper_controller']
     )
-    
+
 
  
     return LaunchDescription([
