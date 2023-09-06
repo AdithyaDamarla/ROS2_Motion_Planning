@@ -21,3 +21,9 @@ In the following project
      ros2 run joint_state_publisher_gui joint_state_publisher_gui
 
      ```
+3. This command will open the moveit assistant gui
+
+  ```
+   ros2 launch moveit_setup_assistant setup_assistant.launch.py
+
+  ```

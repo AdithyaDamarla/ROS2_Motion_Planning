@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8">
+<?xml version="1.0" encoding="UTF-8"?>
 
 <robot name="arm_robot">
 
@@ -9,13 +9,14 @@
         <joint name="joint_2"/>
         <joint name="joint_3"/>
 
-        <joint name= "horizental_arm_to_claw_support"/>
+        <joint name= "horizontal_arm_to_claw_support"/>
     </group>
 
     <group name="gripper">
         <joint name="joint_4"/>
         <joint name="joint_5"/>
     </group>
+    
     <group_state name = "home" group ="arm">
         <joint name="joint_1" value = "0"/>
         <joint name="joint_2" value = "0"/>
@@ -25,7 +26,6 @@
 
     <group_state name = "home" group ="gripper">
         <joint name="joint_4" value = "0"/>
-        <joint name="joint_5" value = "0"/>
     </group_state>
 
     <disable_collision link1="base_link" link2 ="base_plate" reason="next to each"/>
@@ -36,6 +36,7 @@
     <disable_collision link1="claw_support" link2 ="gripper_right" reason="connected to each other"/>
     <disable_collision link1="forward_drive_arm" link2 ="gripper_left" reason="connected to each other"/>
     <disable_collision link1="forward_drive_arm" link2 ="gripper_right" reason="connected to each other"/>
+    <disable_collision link1="forward_drive_arm" link2 ="horizontal_arm" reason="connected to each other"/>
     <disable_collision link1="gripper_left" link2 ="horizontal_arm" reason="connected to each other"/>
     <disable_collision link1="gripper_right" link2 ="horizontal_arm" reason="connected to each other"/>
     <disable_collision link1="gripper_left" link2 ="gripper_right" reason="contacting to each other"/>
