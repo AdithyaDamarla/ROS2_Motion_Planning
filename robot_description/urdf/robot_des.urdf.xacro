@@ -10,6 +10,7 @@
     <xacro:property name="velocity" value="10.0"/>
     <xacro:macro name="default_inertial" params="mass">
         <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
             <mass value="${mass}"/>
             <inertia ixx="1.0" ixy="0.0" ixz="0.0"
                      iyy="1.0" iyz="0.0"

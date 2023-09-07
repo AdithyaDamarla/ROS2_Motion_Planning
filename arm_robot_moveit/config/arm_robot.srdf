@@ -28,18 +28,18 @@
         <joint name="joint_4" value = "0"/>
     </group_state>
 
-    <disable_collision link1="base_link" link2 ="base_plate" reason="next to each"/>
-    <disable_collision link1="base_link" link2 ="forward_drive_arm" reason="connected to each other"/>
-    <disable_collision link1="base_plate" link2 ="forward_drive_arm" reason="connected to each other"/>
-    <disable_collision link1="claw_support" link2 ="forward_drive_arm" reason="connected to each other"/>
-    <disable_collision link1="claw_support" link2 ="gripper_left" reason="connected to each other"/>
-    <disable_collision link1="claw_support" link2 ="gripper_right" reason="connected to each other"/>
-    <disable_collision link1="forward_drive_arm" link2 ="gripper_left" reason="connected to each other"/>
-    <disable_collision link1="forward_drive_arm" link2 ="gripper_right" reason="connected to each other"/>
-    <disable_collision link1="forward_drive_arm" link2 ="horizontal_arm" reason="connected to each other"/>
-    <disable_collision link1="gripper_left" link2 ="horizontal_arm" reason="connected to each other"/>
-    <disable_collision link1="gripper_right" link2 ="horizontal_arm" reason="connected to each other"/>
-    <disable_collision link1="gripper_left" link2 ="gripper_right" reason="contacting to each other"/>
+    <disable_collisions link1="base_link" link2 ="base_plate" reason="next to each"/>
+    <disable_collisions link1="base_link" link2 ="forward_drive_arm" reason="connected to each other"/>
+    <disable_collisions link1="base_plate" link2 ="forward_drive_arm" reason="connected to each other"/>
+    <disable_collisions link1="claw_support" link2 ="forward_drive_arm" reason="connected to each other"/>
+    <disable_collisions link1="claw_support" link2 ="gripper_left" reason="connected to each other"/>
+    <disable_collisions link1="claw_support" link2 ="gripper_right" reason="connected to each other"/>
+    <disable_collisions link1="forward_drive_arm" link2 ="gripper_left" reason="connected to each other"/>
+    <disable_collisions link1="forward_drive_arm" link2 ="gripper_right" reason="connected to each other"/>
+    <disable_collisions link1="forward_drive_arm" link2 ="horizontal_arm" reason="connected to each other"/>
+    <disable_collisions link1="gripper_left" link2 ="horizontal_arm" reason="connected to each other"/>
+    <disable_collisions link1="gripper_right" link2 ="horizontal_arm" reason="connected to each other"/>
+    <disable_collisions link1="gripper_right" link2 ="gripper_left" reason="contacting to each other"/>
 
 
 
