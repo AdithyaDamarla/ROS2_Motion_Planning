@@ -73,7 +73,7 @@
         <parent link="base_link"/>
         <child link="base_plate"/>
         <axis xyz="0 0 1"/>
-        <origin rpy="0 0 0" xyz="0 0 0.307"/>
+        <origin xyz="0 0 0.307"/>
         <limit lower="-${PI/2}" upper="${PI/2}" effort="${effort}" velocity="${velocity}"/>
     </joint>
 
@@ -120,7 +120,7 @@
         <parent link="forward_drive_arm"/>
         <child link="horizontal_arm"/>
         <axis xyz="1 0 0"/>
-        <origin rpy="0 0 0" xyz="0 0 0.8"/>
+        <origin xyz="0 0 0.8"/>
         <limit lower="-${PI/2}" upper="${PI/2}" effort="${effort}" velocity="${velocity}"/>
     </joint>
 
@@ -142,9 +142,7 @@
     <joint name="horizontal_arm_to_claw_support" type="fixed">
         <parent link="horizontal_arm"/>
         <child link="claw_support"/>
-        <axis xyz="1 0 0"/>
-        <origin rpy="0 0 0" xyz="0 0.82 0"/>
-        <limit lower="-${PI/2}" upper="${PI/2}" effort="${effort}" velocity="${velocity}"/>
+        <origin xyz="0 0.82 0"/>
     </joint>
   
   
@@ -192,7 +190,7 @@
         <parent link="claw_support"/>
         <child link="gripper_left"/>
         <axis xyz="0 0 1"/>
-        <origin rpy="0 0 0" xyz="-0.22 0.13 -0.1"/>
+        <origin xyz="-0.22 0.13 -0.1"/>
         <limit lower="0.0" upper="${PI/2}" effort="${effort}" velocity="${velocity}"/>
         <mimic joint="joint_4" multiplier="-1"/>
     </joint>
