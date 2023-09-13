@@ -1,4 +1,4 @@
-moveit_controller_manager: moveit_simple_controller/MoveItSimpleControllerManager
+moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControllerManager
 
 moveit_simple_controller_manager:
   controller_names:
