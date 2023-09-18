@@ -7,11 +7,13 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(ament_cmake_python REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_action REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(arm_robot_msgs REQUIRED)
 find_package(moveit_ros_planning_interface REQUIRED)
+find_package(rclpy REQUIRED)
 
 
 add_library(task_server SHARED src/task_server.cpp)
@@ -31,6 +33,10 @@ rclcpp_components_register_node(task_server
   EXECUTABLE task_server_node
 )
 
+ament_python_install_package(alexa_remote)
+
+
+
 
 install(TARGETS 
   task_server
@@ -39,6 +45,14 @@ install(TARGETS
   RUNTIME DESTINATION bin
 )
 
+install(
+  DIRECTORY launch
+  DESTINATION share/${PROJECT_NAME}
+)
+install(PROGRAMS
+  alexa_remote/alexa_interface.py
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
