@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from flask import Flask
 from ask_sdk_core.skill_builder import SkillBuilder
 from flask_ask_sdk.skill_adapter import SkillAdapter
@@ -6,11 +8,11 @@ from ask_sdk_core.utils import is_request_type, is_intent_name
 from ask_sdk_core.handler_input import HandlerInput
 from ask_sdk_model import Response
 from ask_sdk_model.ui import SimpleCard
-from ask_sdk_core.dispatch_components import AbstractExceptionHandler
+from ask_sdk_core.dispatch_components import AbstractExceptionHandler, AbstractRequestHandler
 import rclpy
 from rclpy.node import Node
 from rclpy.action import ActionClient
-from arm_robot_msgs import ArmRobotTask
+from arm_robot_msgs.action import ArmRobotTask
 import threading
 
 
@@ -116,9 +118,9 @@ skill_builder.add_exception_handler(AllExceptionHandler())
 skill_adapter = SkillAdapter(
     skill=skill_builder.create(), skill_id="amzn1.ask.skill.1fdde450-a8e0-40a8-9a62-842bd5a826c0", app=app)
 
-@app.route("/")
-def invoke_skill():
-    return skill_adapter.dispatch_request()
+# @app.route("/")
+# def invoke_skill():
+#     return skill_adapter.dispatch_request()
 
 
 skill_adapter.register(app=app, route="/")
